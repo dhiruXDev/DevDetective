@@ -12,7 +12,7 @@ DevDetective is a powerful web application that allows users to search and explo
 
 ## 🚀 Live Demo
 
-Check out the live version of the app: [DevDetective](https://your-live-demo-link.com)
+Check out the live version of the app: [DevDetective](https://dev-detective-snowy.vercel.app/)
 
 ## 🧑‍💻 Tech Stack
 
