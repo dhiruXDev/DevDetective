@@ -1,0 +1,499 @@
+:root {
+    --lm-bg: #f6f8ff;
+    --lm-bg-content: #fefefe;
+    --lm-text: #4b6a9b;
+    --lm-text-alt: #2b3442;
+    --lm-shadow: 10px 16px 30px -10px rgba(53, 75, 153, 0.2);
+    --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+    --lm-icon-bg: brightness(100%);
+    --lm-repos-bg : #f4f7fd;
+    /* Btn */
+    --btn: #0079ff;
+    --btn-hover: #60abff;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+  }
+  /* darkmode
+  lightmode */
+.wrraper{
+     background-color: var(--lm-bg)  ;
+     height: 100vh;
+     width: 100vw;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     padding-bottom: 5rem;
+     overflow-x: hidden;
+  }
+  .wrraper.darkmode{
+    background-color:#141D2F;
+
+  } 
+  .wrraper.lightmode{
+    background-color: var(--lm-bg);
+  }
+  .Error_img{
+     display:  none;
+     margin-top: 4rem;
+  }
+  [img_err]{
+    height: 240px;
+    width: 320px;
+    border-radius: 6px;
+  }
+.container{ 
+      width: 1120px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;     
+      align-items: center;
+      justify-content: center;
+      position: relative;  
+      padding: 1rem 1.8rem;     
+}
+.nav{
+   width: 75%;
+   display: flex;
+   justify-content: space-between;
+   font-size: 2rem;
+   font-weight: 900;
+   color: var(--lm-text);
+}
+.nav.darkmode{
+  color: var(--lm-bg);
+}
+.nav.lightmode{
+  color: var(--lm-text);
+}
+.bg_change{
+  display: flex;
+  align-items: center;
+  column-gap: 1.7rem;
+  cursor: pointer;
+}
+[bg_mode_icon]{
+  height: 20px;
+  width: 20px;
+}
+[bg_mode_text]{
+  font-size: 1.2rem;
+}
+.searchbar_container{
+  position: relative;
+  width: 75%;
+  margin: 1.5rem 0;
+   
+  padding: 0.2rem 0;
+  padding-right: 2rem;
+  padding-left: 1rem;
+  border-radius: 0.9rem;
+  box-shadow:var(--lm-shadow);
+}
+.searchbar_container.darkmode{
+  background-color: #1E2A47; 
+}
+.searchbar_container.lightmode{
+  background-color: var(--lm-bg-content); 
+}
+.search-form input{
+    width: 70%;
+    border: none;
+    appearance: none;
+    padding: 1.5rem 0;
+    padding-right: 2rem;
+    padding-left: 2.8rem;
+    text-align: start;
+    font-size: 17px;
+    background-color: transparent;
+    
+    color: var(--lm-bg);
+    font-size: 1.5rem;
+    outline: none;
+}
+[search_input_bar].darkmode::placeholder{
+  color: var(--lm-bg); 
+}
+.search-form input.lightmode{
+  background-color: var(--lm-bg-content);
+  color: var(--lm-text);
+}
+ [search_input_bar]:focus{
+  border: none;
+  outline: none;  
+}
+[search_input_bar]::placeholder{
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--lm-text);
+}
+[search_btn]{
+  position: absolute;
+  right: 2%;
+  top: 18%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  background: var(--btn);
+  border: none;
+  color: var(--lm-bg);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  
+}
+[search_btn]:hover{
+  background: var(--btn-hover);
+  transition: all;
+  transition-duration: 200ms;
+}
+ [search_icon]{
+  position: absolute;
+  top: 40% !important;
+  left: 2%;
+  height: 22px;
+  width: 22px;
+ }
+[error-text]{
+  color: red;
+  font-weight: 600;
+  font-size: 1.3rem;
+  position: absolute;
+  right: 25%;
+  bottom: 37%;
+}
+ /* profile container */
+ [profile-container]{
+        width: 74%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2.5rem 2rem;
+        padding-bottom: 1rem;
+        background-color: var(--lm-bg-content);
+        border-radius: 0.95rem;
+        box-shadow:var(--lm-shadow);
+ }
+ [heading-container]{
+       display: flex;
+       align-items: center;
+       
+     gap:  2rem;
+ }
+ [name-date-container]{
+   /* padding-left: 2.5rem; */
+ }
+ [profile-container].darkmode{
+  background-color:#1E2A47;
+ }
+ [profile-container].lightmode{
+  background-color: var(--lm-bg-content);
+ }
+ [profile-img]{
+  height: 120px;
+  width: 120px;
+  border-radius: 5rem;
+ }
+ [profile-info]{
+    position: relative;
+    left: 9rem;
+    display:  flex;
+    flex-direction: column;
+    width: 75%;
+   
+  padding: 0.5rem 1.2rem;
+ }
+ [profile-heading]{
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+ }
+ [profile-heading] h2{
+       color: var(--lm-text-alt);
+       font-size: 1.95rem;
+ }
+ [profile-heading] h3{
+  color: var(--lm-text);
+}
+[profile-name] , [joining-date].darkmode{
+  color: var(--lm-bg) !important;   
+}
+[profile-name].lightmode{
+  color: var(--lm-text-alt) !important;
+}
+[joining-date].lightmode{
+  color: var(--lm-text);
+}
+
+[github-profile-id]{
+   font-size: 1.3rem;
+   padding: 1rem 0;
+   appearance: none;
+   color: var(--btn);
+}
+[github-profile-id].darkmode{
+  color: var(--btn);
+}
+[github-profile-id].lightmode{
+  color: var(--btn);
+}
+[biodata]{
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  color: var(--lm-text);
+  font-size: 1.1rem;
+  letter-spacing: 0.009rem;
+  opacity: 0.8;
+}
+[biodata].darkmode{
+  color: var(--lm-repos-bg);
+}
+[biodata].lightmode{
+  color: var(--lm-text);
+}
+[profile-stats-wrapper]{
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  background-color: var(--lm-repos-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+}
+[profile-stats-wrapper].darkmode{
+  background-color:#141D2F;
+  color: var(--lm-bg) !important; 
+}
+[profile-stats-wrapper].lightmode{
+  background-color: var(--lm-repos-bg);   
+}
+.stats-tittle {
+  font-size:  1.1rem;
+}
+.stats-value{
+  font-size: 1.8rem; 
+  font-weight: 700;
+}
+.user-link:hover{
+    color: rgb(200, 196, 196) !important;
+   transition: all;
+   transition-duration: 200ms;
+}
+ 
+[profile-stats-wrapper].lightmode .stats-tittle{
+  color: var(--lm-text); 
+}
+[profile-stats-wrapper].lightmode .stats-value{
+   color:var(--lm-text-alt) ;  
+}
+ 
+
+[profile-stats-wrapper].darkmode .stats-tittle,[profile-stats-wrapper].darkmode .stats-value {
+  color: var(--lm-bg) !important;
+}
+
+[user-contact-info-container]{
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: baseline;
+  align-items: center;
+   gap: 2rem;
+  padding: 1.5rem 1.2rem;
+  color: var(--lm-text);
+  font-size: 1.2rem;
+}
+[user-contact]{
+  display: flex;
+  gap: 1rem;
+}
+[user-contact] a{
+  appearance: none;
+  color: var(--lm-text);
+}
+[user-contact-info-container].darkmode{
+    color: var(--lm-bg);
+}
+[user-contact-info-container].lightmode{
+    color: var(--lm-text);
+}
+.user-link.darkmode {
+    color:var(--lm-bg-content);
+}
+ 
+@media screen and (max-width: 1140px) {
+      .container{
+           width: 860px;
+      }
+      [error-text]{
+         display: none   !important;
+      }
+      /* [heading-container]{
+        display: flex;
+        flex-direction: column;
+      } */
+      [profile-heading]{
+         display: flex;
+         flex-direction: column;
+          gap: 0;
+          margin-left: -8px;
+      }
+       
+      [profile-info]{
+        width: 100%;
+        inset: 0;
+      }
+}
+@media screen and (max-width: 880px) {
+   .wrraper{
+     font-size:  2px !important;
+     padding: 2rem 0;
+   }
+    .container{
+     padding: 0 ;
+     width: 440px;
+     margin:0  auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: center !important;
+     align-items: center !important;
+    margin-left: -1.5rem;
+  }
+  [img_err]{
+    height: 160px;
+    width: 280px;
+    object-fit: cover;
+  }
+   .heading ,[bg_mode_text],  [search_input_bar]::placeholder ,[search_btn]{
+      font-size: 10px;
+   }
+   [search_btn] {
+     padding: 0.5rem 0.6rem;
+      margin-right: 0.5rem; 
+   }
+   .search-form input{
+     font-size: 2px !important;
+     margin-left: 5px;
+   }
+   [search_btn]{
+       font-size: 5px;
+   }
+    .search-form input{
+      padding: 0.8rem !important;
+   }
+   .nav{
+    padding-top: 8px;
+   }
+   [search_icon]{
+       height: 12px;
+       width: 12px;
+   }
+   [profile-img]{
+    height: 65px;
+    width: 65px;
+   }
+   [profile-name] , [joining-date] ,[github-profile-id ]  {
+     font-size: 8px !important;
+   }
+   [biodata]{
+     font-size: 5px;
+   }
+   [profile-info]{
+    width: 100% !important;
+   }
+   [profile-stats-wrapper]{
+    width: 100%;
+    font-size: 5px !important;
+   }
+   .stats-tittle , .stats-value , [location] , .user-link , [company]{
+     font-size: 5px ;
+   }
+   [color1]{
+    height: 15px !important;
+    width: 15px !important;
+   }
+   [search_input_bar]{
+     font-size: 6px;
+   }
+   [profile-container]{
+     display:  flex;
+     flex-direction: column;
+      
+   }
+ 
+ 
+  [profile-heading]{
+     display: flex;
+     flex-direction: column;
+     align-items: start !important;
+      gap: 0;
+      margin-left: -8px;
+      font-size:  2px !important;
+  }
+  [name-date-container]{
+    display: flex;
+    flex-direction: column;
+    gap: 1px !important;
+  }
+  [github-profile-id]{
+     padding: 0;
+     margin-left: -8px !important;
+  }
+ 
+  [name-date-container]{
+     display:  flex;
+     flex-direction: column;
+      
+  }
+  [user-contact-info-container]{
+     display: flex;
+     gap: 0.5rem;
+  }
+  [profile-info]{
+    width: 120% !important;
+      margin-left: -2rem;
+
+  }
+}
+
+
+/* Light mode
+[user-contact-info-container].lightmode  [user-contact] [button-icon] img {
+  filter: brightness(100%);
+}
+
+/* Dark mode */
+ 
+/* [user-contact-info-container].darkmode [user-contact] [button-icon] img {
+  filter: brightness(0) invert(1);
+}  */
+ 
+ 
+.color1 {
+  fill: #4b6a9b; /* Blue color for light mode */
+}
+
+/* Dark mode color */
+.darkmode .color1 {
+  fill: var(--lm-bg-content); /* White color for dark mode */
+}
+
+
+
+
+
+
+
+/*
+   1 .  when you have too v=change the multiple class color  then use :-   
+🔢 ->      .darkmode .color1 {
+              fill: var(--lm-bg-content);  
+             }
+
+            .color1 .darkmode  {
+                  fill: var(--lm-bg-content);   
+              }    ------------> By using this only one class will appear this change. But by using uper vala every class will apear
+*/
