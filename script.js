@@ -193,7 +193,7 @@ async function fetchdetails(searchedUser) {
 }
 function rederUserDetails(loginId) {
     userImg.src = `${loginId.avatar_url}`;
-    userName.textContent = loginId?.name;
+    userName.textContent = loginId?.name ? loginId?.name : "Not Available";
 
     const dateSegment = loginId.created_at.split("T").shift().split("-");
     joiningDate.textContent = `Joined ${dateSegment[2]} ${months[dateSegment[1] - 1]} ${dateSegment[0]}`;
@@ -214,8 +214,6 @@ function rederUserDetails(loginId) {
     if (loginId && loginId.twitter_username) { twitter.href = `https://twitter.com/${loginId.twitter_username}`; }
     else { twitter.href = "#"; }
     company.textContent = (loginId?.company) ? loginId?.company :  "Not Available";
-
-
 }
 
 
@@ -235,34 +233,3 @@ function rederUserDetails(loginId) {
 
 
 
-
-/* 
-1. split() :-
-----------------
-const dateSegment= loginId.created_at.split("T").shift().split("-");       -->  after spliting the object (as " - " comes) into string
-joiningDate.textContent = `Joined ${dateSegment[2]} ${months[dateSegment[1]-1]} ${dateSegment[0]}`; 
-
-
-2 . updating link and link content (that is visible on UI)
------------------------------------------------------------------
-HTML: ------------> <a href="#"  target="_blank" github-profile-id  rel="noopener noreferrer"></a>
-    githubUserId.textContent = `@${loginId?.login}`; ---> by using this im only updating the text that will visible on UI
-    githubUserId.href =  `${loginId?.html_url}`   ---> By using this , im connecting the link in background , where user will go on click
- 
-
-3 . <a  href="#" twitter-page  rel="noopener noreferrer"></a> meaning of thsi ->   rel="noopener noreferrer"
------------------------------------------------------------------------------------------------------------------
-The HTML attribute rel="noopener noreferrer" appears in external hyperlinks and has two values: noopener and noreferrer:
-👍noopener :-
- --------------
-Prevents the linked page from accessing the linking page, especially when opening untrusted links. This is useful because when you open a link in a new tab or window, the page that opens can control the site it was opened from.
-👍noreferrer :-
-  ---------------
-Prevents the browser from sending referrer information to the target resource when the user clicks the link. This means that the server of the target resource won't know where the visitor came from, and in Google Analytics, this visit will be shown as Direct Traffic, not Referral.
-
-
-4 . checknull();
--------------------
-checkNull() is a function that checks if its first argument is null or undefined.If it is, it returns false;
- otherwise, it returns true.
-*/
