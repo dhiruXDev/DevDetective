@@ -38,7 +38,7 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const url = "https://api.github.com/users/";
 let darkMode = true;
 let lighMode = false;
-const currentUser = 'thepranaygupta';
+const currentUser = 'dhiruXDev';
 errorText.style.display = "none"
 cuurentTabInfo();
 function cuurentTabInfo() {
